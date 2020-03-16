@@ -373,7 +373,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
     });
 
     it('should display metric tooltip correctly', async function () {
-        let elem = await page.$('[data-report="Referrers.getReferrerType"] #nb_visits .thDIV');
+        let elem = await page.jQuery('[data-report="Referrers.getReferrerType"] #nb_visits .thDIV');
         await elem.hover();
 
         elem = await page.jQuery('.columnDocumentation:visible', { waitFor: true });
@@ -598,7 +598,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
     });
 
     it('should load the ecommerce log page with segment', async function () {
-        await page.goto("?" + urlBase + "&segment=countryCode%3D%3DUS#?" + generalParams + "&category=Goals_Ecommerce&subcategory=Goals_EcommerceLog&segment=countryCode%3D%3DUS");
+        await page.goto("?" + urlBase + "&segment=countryCode%3D%3DCN#?" + generalParams + "&category=Goals_Ecommerce&subcategory=Goals_EcommerceLog&segment=countryCode%3D%3DCN");
 
         pageWrap = await page.$('.pageWrap');
         expect(await pageWrap.screenshot()).to.matchImage('ecommerce_log_segmented');

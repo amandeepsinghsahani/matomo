@@ -28,6 +28,8 @@ describe("EmptySite", function () {
     });
 
     it('should be possible to ignore this screen for one hour', async function () {
+        await page.reload();
+
         await page.evaluate(function() {
             $('.ignoreSitesWithoutData').click();
         });
